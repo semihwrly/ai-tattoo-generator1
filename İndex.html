@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemini AI Tattoo Studio</title>
+    <style>
+        :root { --gemini-blue: #4285f4; --dark: #121212; }
+        body { background: var(--dark); color: white; font-family: 'Segoe UI', sans-serif; display: flex; justify-content: center; padding: 40px; }
+        .container { max-width: 500px; width: 100%; background: #1e1e1e; padding: 30px; border-radius: 20px; border: 1px solid #333; }
+        h1 { color: var(--gemini-blue); text-align: center; }
+        textarea { width: 100%; height: 100px; background: #000; color: white; border: 1px solid var(--gemini-blue); border-radius: 10px; padding: 15px; box-sizing: border-box; margin-bottom: 20px; }
+        button { width: 100%; padding: 15px; background: var(--gemini-blue); color: white; border: none; border-radius: 10px; font-weight: bold; cursor: pointer; }
+        #loader { display: none; text-align: center; margin: 20px; color: var(--gemini-blue); }
+        #resultImg { width: 100%; border-radius: 10px; margin-top: 20px; display: none; box-shadow: 0 0 20px rgba(66, 133, 244, 0.3); }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Gemini Tattoo ✨</h1>
+    <p style="text-align: center; color: #888;">Google AI Destekli Tasarım</p>
+    
+    <textarea id="userInput" placeholder="Dövme fikrini anlat, Gemini onu profesyonel bir prompta çevirsin..."></textarea>
+    <button onclick="generateWithGemini()">Gemini ile Tasarla</button>
+
+    <div id="loader">Gemini dövmeni hayal ediyor...</div>
+    <img id="resultImg" src="" alt="Dövme Çıktısı">
+</div>
+
+<script type="module">
+    // Google AI SDK'sını import ediyoruz
+    import { GoogleGenerativeAI } from "https://esm.run/@google/generative-ai";
+
+    // --- BURAYA GOOGLE AI STUDIO'DAN ALDIĞIN KEY'İ YAZ ---
+    const API_KEY = "BURAYA_GEMINI_KEY_YAZ";
+    const genAI = new GoogleGenerativeAI(API_KEY);
+
+    window.generateWithGemini = async function() {
+        const input = document.getElementById('userInput').value;
+        const loader = document.getElementById('loader');
+        const img = document.getElementById('resultImg');
+
+        if(!input) return alert("Fikir yazmalısın!");
+
+        loader.style.display = "block";
+        img.style.display = "none";
+
+        try {
+            // 1. ADIM: Gemini'ye promptu zenginleştirtiyoruz
+            const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+            const prompt = `Sen profesyonel bir dövme sanatçısısın. Kullanıcının şu fikrini: "${input}" al ve bunu bir yapay zeka resim oluşturucu için İngilizce, detaylı, sanatsal bir prompta çevir. Sadece promptu yaz, başka açıklama yapma.`;
+            
+            const result = await model.generateContent(prompt);
+            const enrichedPrompt = result.response.text();
+            
+            console.log("Gemini'nin ürettiği prompt:", enrichedPrompt);
+
+            // 2. ADIM: Gemini'den gelen kaliteli promptu resme dönüştürüyoruz
+            // (Burada resmi oluşturan ücretsiz motoru tetikliyoruz)
+            const seed = Math.floor(Math.random() * 999999);
+            const finalImageUrl = `https://pollinations.ai/p/${encodeURIComponent(enrichedPrompt)}?width=1024&height=1024&seed=${seed}&model=flux`;
+
+            img.src = finalImageUrl;
+            img.onload = () => {
+                loader.style.display = "none";
+                img.style.display = "block";
+            };
+
+        } catch (error) {
+            console.error(error);
+            alert("Gemini bağlantısında bir sorun oluştu. Key'in doğru olduğundan emin ol.");
+            loader.style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>
