@@ -1,79 +1,180 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gemini AI Tattoo Studio</title>
-    <style>
-        :root { --gemini-blue: #4285f4; --dark: #121212; }
-        body { background: var(--dark); color: white; font-family: 'Segoe UI', sans-serif; display: flex; justify-content: center; padding: 40px; }
-        .container { max-width: 500px; width: 100%; background: #1e1e1e; padding: 30px; border-radius: 20px; border: 1px solid #333; }
-        h1 { color: var(--gemini-blue); text-align: center; }
-        textarea { width: 100%; height: 100px; background: #000; color: white; border: 1px solid var(--gemini-blue); border-radius: 10px; padding: 15px; box-sizing: border-box; margin-bottom: 20px; }
-        button { width: 100%; padding: 15px; background: var(--gemini-blue); color: white; border: none; border-radius: 10px; font-weight: bold; cursor: pointer; }
-        #loader { display: none; text-align: center; margin: 20px; color: var(--gemini-blue); }
-        #resultImg { width: 100%; border-radius: 10px; margin-top: 20px; display: none; box-shadow: 0 0 20px rgba(66, 133, 244, 0.3); }
-    </style>
-</head>
-<body>
+/* ==========================================
+   1. GENEL REBKLER VE DEĞİŞKENLER (DARK MODE)
+   ========================================== */
+:root {
+    --bg-main: #0a0a0a;       /* Ana arka plan - Derin Siyah */
+    --bg-card: #141414;       /* Kart ve bölme arka planları - Koyu Gri */
+    --border-color: #262626;  /* İnce çizgiler ve sınırlar */
+    --text-main: #ffffff;      /* Ana yazı rengi */
+    --text-muted: #8a8a8a;     /* İkincil, silik yazı rengi */
+    --accent-color: #ffffff;   /* Vurgu rengi */
+    --font-sans: 'Inter', sans-serif;
+}
 
-<div class="container">
-    <h1>Gemini Tattoo ✨</h1>
-    <p style="text-align: center; color: #888;">Google AI Destekli Tasarım</p>
-    
-    <textarea id="userInput" placeholder="Dövme fikrini anlat, Gemini onu profesyonel bir prompta çevirsin..."></textarea>
-    <button onclick="generateWithGemini()">Gemini ile Tasarla</button>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <div id="loader">Gemini dövmeni hayal ediyor...</div>
-    <img id="resultImg" src="" alt="Dövme Çıktısı">
-</div>
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+}
 
-<script type="module">
-    // Google AI SDK'sını import ediyoruz
-    import { GoogleGenerativeAI } from "https://esm.run/@google/generative-ai";
+a {
+    color: inherit;
+    text-decoration: none;
+}
 
-    // --- BURAYA GOOGLE AI STUDIO'DAN ALDIĞIN KEY'İ YAZ ---
-    const API_KEY = "";
-    const genAI = new GoogleGenerativeAI(API_KEY);
+/* ==========================================
+   2. ORTAK MENÜ (NAVBAR) VE ALT BİLGİ (FOOTER)
+   ========================================== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    border-bottom: 1px solid var(--border-color);
+}
 
-    window.generateWithGemini = async function() {
-        const input = document.getElementById('userInput').value;
-        const loader = document.getElementById('loader');
-        const img = document.getElementById('resultImg');
+.logo {
+    font-size: 1.3rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
 
-        if(!input) return alert("Fikir yazmalısın!");
+.nav-links a {
+    margin-left: 20px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    transition: color 0.3s ease;
+}
 
-        loader.style.display = "block";
-        img.style.display = "none";
+.nav-links a:hover, .nav-links a.active {
+    color: var(--text-main);
+}
 
-        try {
-            // 1. ADIM: Gemini'ye promptu zenginleştirtiyoruz
-            const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-            const prompt = `Sen profesyonel bir dövme sanatçısısın. Kullanıcının şu fikrini: "${input}" al ve bunu bir yapay zeka resim oluşturucu için İngilizce, detaylı, sanatsal bir prompta çevir. Sadece promptu yaz, başka açıklama yapma.`;
-            
-            const result = await model.generateContent(prompt);
-            const enrichedPrompt = result.response.text();
-            
-            console.log("Gemini'nin ürettiği prompt:", enrichedPrompt);
+footer {
+    text-align: center;
+    padding: 40px 5%;
+    margin-top: 60px;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
 
-            // 2. ADIM: Gemini'den gelen kaliteli promptu resme dönüştürüyoruz
-            // (Burada resmi oluşturan ücretsiz motoru tetikliyoruz)
-            const seed = Math.floor(Math.random() * 999999);
-            const finalImageUrl = `https://pollinations.ai/p/${encodeURIComponent(enrichedPrompt)}?width=1024&height=1024&seed=${seed}&model=flux`;
+/* ==========================================
+   3. BUTONLAR
+   ========================================== */
+.btn-primary {
+    background-color: var(--text-main);
+    color: var(--bg-main);
+    padding: 12px 24px;
+    border: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    text-align: center;
+    display: inline-block;
+}
 
-            img.src = finalImageUrl;
-            img.onload = () => {
-                loader.style.display = "none";
-                img.style.display = "block";
-            };
+.btn-primary:hover {
+    opacity: 0.9;
+}
 
-        } catch (error) {
-            console.error(error);
-            alert("Gemini bağlantısında bir sorun oluştu. Key'in doğru olduğundan emin ol.");
-            loader.style.display = "none";
-        }
-    }
-</script>
+/* ==========================================
+   4. DÖVME TASARIM GALERİSİ (GRID)
+   ========================================== */
+.tattoo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 40px 5%;
+}
 
-</body>
-</html>
+.tattoo-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    display: block;
+}
+
+.tattoo-card:hover {
+    transform: translateY(-5px);
+    border-color: #444;
+}
+
+/* Çizgilerin net görünmesi için görsellere özel saf beyaz alan */
+.tattoo-image-wrapper {
+    background-color: #ffffff; 
+    height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.tattoo-image-wrapper img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.tattoo-info {
+    padding: 15px;
+}
+
+.tattoo-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--text-main);
+}
+
+.tattoo-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* ==========================================
+   5. SAYFAYA ÖZEL DETAY YAPILARI
+   ========================================== */
+/* Detay Sayfası İki Sütunlu Yapı */
+.detail-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    padding: 50px 5%;
+}
+
+/* Sanatçı Profil Başlığı */
+.artist-header {
+    background-color: var(--bg-card);
+    border-bottom: 1px solid var(--border-color);
+    padding: 60px 5%;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.artist-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #333;
+    object-fit: cover;
+}
+
+/* Mobil Uyum için Küçük Dokunuş */
+@media (max-width: 768px) {
+    .detail-container { grid-template-columns: 1fr; }
+    .artist-header { flex-direction: column; text-align: center; }
+}
