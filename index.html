@@ -24,59 +24,19 @@
         </p>
     </header>
 
-    <div style="padding: 30px 5% 10px 5%; display: flex; gap: 12px; overflow-x: auto;">
-        <span style="border: 1px solid var(--text-main); padding: 6px 16px; font-size: 0.85rem; cursor: pointer;">Hepsi</span>
-        <span style="border: 1px solid var(--border-color); color: var(--text-muted); padding: 6px 16px; font-size: 0.85rem; cursor: pointer;">Minimalist</span>
-        <span style="border: 1px solid var(--border-color); color: var(--text-muted); padding: 6px 16px; font-size: 0.85rem; cursor: pointer;">Geometrik</span>
-        <span style="border: 1px solid var(--border-color); color: var(--text-muted); padding: 6px 16px; font-size: 0.85rem; cursor: pointer;">Cyberpunk</span>
+    <div class="filter-container" style="padding: 30px 5% 10px 5%; display: flex; gap: 12px; overflow-x: auto;">
+        <span class="filter-btn active" data-category="all" style="border: 1px solid var(--text-main); padding: 6px 16px; font-size: 0.85rem; cursor: pointer;">Hepsi</span>
+        <span class="filter-btn" data-category="minimalist" style="border: 1px solid var(--border-color); color: var(--text-muted); padding: 6px 16px; font-size: 0.85rem; cursor: pointer;">Minimalist</span>
+        <span class="filter-btn" data-category="geometrik" style="border: 1px solid var(--border-color); color: var(--text-muted); padding: 6px 16px; font-size: 0.85rem; cursor: pointer;">Geometrik</span>
+        <span class="filter-btn" data-category="cyberpunk" style="border: 1px solid var(--border-color); color: var(--text-muted); padding: 6px 16px; font-size: 0.85rem; cursor: pointer;">Cyberpunk</span>
     </div>
 
-    <main class="tattoo-grid">
-        
-        <a href="detail.html" class="tattoo-card">
-            <div class="tattoo-image-wrapper">
-                <img src="https://images.unsplash.com/photo-1560942485-b2a11cc13456?q=80&w=400" alt="Tasarım Şablonu">
-            </div>
-            <div class="tattoo-info">
-                <h3 class="tattoo-title">Minimalist Dalga Formu</h3>
-                <div class="tattoo-meta">
-                    <span>@SeraTatt</span>
-                    <span style="color: var(--text-main); font-weight: 600;">$45</span>
-                </div>
-            </div>
-        </a>
-
-        <a href="detail.html" class="tattoo-card">
-            <div class="tattoo-image-wrapper">
-                <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?q=80&w=400" alt="Tasarım Şablonu">
-            </div>
-            <div class="tattoo-info">
-                <h3 class="tattoo-title">Soyut Geometrik Hilal</h3>
-                <div class="tattoo-meta">
-                    <span>@AlexLine</span>
-                    <span style="color: var(--text-main); font-weight: 600;">$60</span>
-                </div>
-            </div>
-        </a>
-
-        <a href="detail.html" class="tattoo-card">
-            <div class="tattoo-image-wrapper">
-                <img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?q=80&w=400" alt="Tasarım Şablonu">
-            </div>
-            <div class="tattoo-info">
-                <h3 class="tattoo-title">Linear Botanik Yaprak</h3>
-                <div class="tattoo-meta">
-                    <span>@SeraTatt</span>
-                    <span style="color: var(--text-main); font-weight: 600;">$35</span>
-                </div>
-            </div>
-        </a>
-
-    </main>
+    <main class="tattoo-grid" id="tattoo-gallery"></main>
 
     <footer>
         <p>&copy; 2026 InkMarket. Tüm Hakları Saklıdır.</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
