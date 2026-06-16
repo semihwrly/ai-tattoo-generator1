@@ -1,20 +1,22 @@
 const tattoos = [
     // ... eski dövmelerin burada kalacak ...
+    const tattoos = [
+    // ... eski dövmelerin burada kalacak ...
     
     // YENİ TASARIMLARINI BURAYA EKLE:
     {
         id: 5, // ID'yi her zaman bir arttır
-        title: "Kelebek",
-        artist: "@Semihwrly",
-        price: 25$,
+        title: "Kendi Tasarımının Adı",
+        artist: "@SeninKullanıcıAdın",
+        price: 50,
         category: "minimalist", // minimalist, geometrik veya cyberpunk
         image: "images1.png" // İnternetten bir link veya proje klasöründeki resmin yolu
     },
     {
         id: 6,
         title: "İkinci Tasarımın",
-        artist: "@Semihwrly",
-        price: 50$,
+        artist: "@SeninKullanıcıAdın",
+        price: 75,
         category: "geometrik",
         image: "images2.png"
     }
