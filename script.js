@@ -1,39 +1,22 @@
-/* ==========================================
-   1. SAHTE VERİ HAVUZU (MOCK DATA)
-   Tüm dövme tasarımlarını tek bir merkezde tutuyoruz.
-   ========================================== */
 const tattoos = [
+    // ... eski dövmelerin burada kalacak ...
+    
+    // YENİ TASARIMLARINI BURAYA EKLE:
     {
-        id: 1,
-        title: "Minimalist Dalga Formu",
-        artist: "@SeraTatt",
-        price: 45,
-        category: "minimalist",
-        image: "https://images.unsplash.com/photo-1560942485-b2a11cc13456?q=80&w=400"
+        id: 5, // ID'yi her zaman bir arttır
+        title: "Kendi Tasarımının Adı",
+        artist: "@SeninKullanıcıAdın",
+        price: 50,
+        category: "minimalist", // minimalist, geometrik veya cyberpunk
+        image: "resim_linkin_buraya.png" // İnternetten bir link veya proje klasöründeki resmin yolu
     },
     {
-        id: 2,
-        title: "Soyut Geometrik Hilal",
-        artist: "@AlexLine",
-        price: 60,
+        id: 6,
+        title: "İkinci Tasarımın",
+        artist: "@SeninKullanıcıAdın",
+        price: 75,
         category: "geometrik",
-        image: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?q=80&w=400"
-    },
-    {
-        id: 3,
-        title: "Linear Botanik Yaprak",
-        artist: "@SeraTatt",
-        price: 35,
-        category: "minimalist",
-        image: "https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?q=80&w=400"
-    },
-    {
-        id: 4,
-        title: "Cyber Neon Kask",
-        artist: "@NeoInk",
-        price: 85,
-        category: "cyberpunk",
-        image: "https://images.unsplash.com/photo-1590247813693-5541d1c609fd?q=80&w=400"
+        image: "resim_linkin_2.png"
     }
 ];
 
