@@ -8,7 +8,7 @@ const tattoos = [
         artist: "@SeninKullanıcıAdın",
         price: 50,
         category: "minimalist", // minimalist, geometrik veya cyberpunk
-        image: "resim_linkin_buraya.png" // İnternetten bir link veya proje klasöründeki resmin yolu
+        image: "images1.png" // İnternetten bir link veya proje klasöründeki resmin yolu
     },
     {
         id: 6,
