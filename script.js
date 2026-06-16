@@ -4,8 +4,8 @@ const tattoos = [
     // YENİ TASARIMLARINI BURAYA EKLE:
     {
         id: 5, // ID'yi her zaman bir arttır
-        title: "Kendi Tasarımının Adı",
-        artist: "@SeninKullanıcıAdın",
+        title: "Kelebek",
+        artist: "@Semihwrly",
         price: 50,
         category: "minimalist", // minimalist, geometrik veya cyberpunk
         image: "images1.png" // İnternetten bir link veya proje klasöründeki resmin yolu
