@@ -1,0 +1,6 @@
+tattoo-marketplace/
+│
+├── index.html          (Ana Sayfa - Keşfet, Filtreler ve Popüler Tasarımlar)
+├── artist.html         (Sanatçı Profili - Sanatçının Galeri ve Bilgileri)
+├── detail.html         (Tasarım Detay Sayfası - Satın Alma ve Çözünürlük Bilgisi)
+└── style.css           (Tüm sayfaların ortak Dark Mode stil dosyası)
