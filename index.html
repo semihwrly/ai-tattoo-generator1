@@ -3,15 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InkMarket | Özel Dövme Tasarımları</title>
-    <!-- Google Fonts üzerinden şık bir yazı tipi çektik -->
+    <title>InkMarket | Keşfet</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <!-- Harici stil dosyamızı bağlıyoruz -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Navigasyon Barı -->
     <nav class="navbar">
         <div class="logo"><a href="index.html">INKMARKET</a></div>
         <div class="nav-links">
@@ -20,54 +17,26 @@
         </div>
     </nav>
 
-    <!-- Giriş (Hero) Bölümü -->
     <header style="padding: 60px 5%; text-align: center; border-bottom: 1px solid var(--border-color);">
-        <h1 style="font-size: 2.5rem; margin-bottom: 15px; font-weight: 800;">Sadece Benzersiz Dövme Tasarımları</h1>
-        <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 30px;">
-            Dünyanın dört bir yanından profesyonel dövme sanatçılarının hazırladığı dijital şablonları (stencil) keşfedin ve doğrudan satın alın.
+        <h1 style="font-size: 2.3rem; margin-bottom: 12px; font-weight: 800; letter-spacing: -0.5px;">Benzersiz Dövme Şablonları</h1>
+        <p style="color: var(--text-muted); max-width: 550px; margin: 0 auto;">
+            Profesyonel sanatçılar tarafından üretilen dijital flaş dövme tasarımlarını keşfedin ve mülkiyetini satın alın.
         </p>
     </header>
 
-    <!-- Filtreleme Alanı (Görsel Tasarım İçin Basit Yapı) -->
-    <div style="padding: 20px 5% 0 5%; display: flex; gap: 15px; overflow-x: auto;">
-        <span style="border: 1px solid var(--text-main); padding: 5px 15px; font-size: 0.85rem; cursor: pointer;">Hepsi</span>
-        <span style="border: 1px solid var(--border-color); color: var(--text-muted); padding: 5px 15px; font-size: 0.85rem; cursor: pointer;">Minimalist / Linear</span>
-        <span style="border: 1px solid var(--border-color); color: var(--text-muted); padding: 5px 15px; font-size: 0.85rem; cursor: pointer;">Geometrik</span>
+    <div class="filter-container" style="padding: 30px 5% 10px 5%; display: flex; gap: 12px; overflow-x: auto;">
+        <span class="filter-btn active" data-category="all" style="border: 1px solid var(--text-main); padding: 6px 16px; font-size: 0.85rem; cursor: pointer;">Hepsi</span>
+        <span class="filter-btn" data-category="minimalist" style="border: 1px solid var(--border-color); color: var(--text-muted); padding: 6px 16px; font-size: 0.85rem; cursor: pointer;">Minimalist</span>
+        <span class="filter-btn" data-category="geometrik" style="border: 1px solid var(--border-color); color: var(--text-muted); padding: 6px 16px; font-size: 0.85rem; cursor: pointer;">Geometrik</span>
+        <span class="filter-btn" data-category="cyberpunk" style="border: 1px solid var(--border-color); color: var(--text-muted); padding: 6px 16px; font-size: 0.85rem; cursor: pointer;">Cyberpunk</span>
     </div>
 
-    <!-- Tasarım Galerisi (Grid) -->
-    <main class="tattoo-grid">
-        
-        <!-- Örnek Kart 1 (Tasarım Detay Sayfasına Yönlendirir) -->
-        <a href="detail.html" class="tattoo-card">
-            <div class="tattoo-image-wrapper">
-                <!-- Yer tutucu (placeholder) dövme çizim görseli -->
-                <img src="https://images.unsplash.com/photo-1560942485-b2a11cc13456?q=80&w=400&auto=format&fit=crop" alt="Tasarım Şablonu">
-            </div>
-            <div class="tattoo-info">
-                <h3 class="tattoo-title">Minimalist Geometrik Dalga</h3>
-                <div class="tattoo-meta">
-                    <span>Sanatçı: @SeraTatt</span>
-                    <span style="color: var(--text-main); font-weight: 600;">$45</span>
-                </div>
-            </div>
-        </a>
+    <main class="tattoo-grid" id="tattoo-gallery"></main>
 
-        <!-- Örnek Kart 2 (Sanatçı Sayfası Bağlantılı) -->
-        <div class="tattoo-card">
-            <div class="tattoo-image-wrapper">
-                <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?q=80&w=400&auto=format&fit=crop" alt="Tasarım Şablonu">
-            </div>
-            <div class="tattoo-info">
-                <h3 class="tattoo-title">Linear Kahve Formülü</h3>
-                <div class="tattoo-meta">
-                    <span><a href="artist.html" style="text-decoration: underline;">Sanatçı: @AlexLine</a></span>
-                    <span style="color: var(--text-main); font-weight: 600;">$30</span>
-                </div>
-            </div>
-        </div>
+    <footer>
+        <p>&copy; 2026 InkMarket. Tüm Hakları Saklıdır.</p>
+    </footer>
 
-    </main>
-
+    <script src="script.js"></script>
 </body>
 </html>
