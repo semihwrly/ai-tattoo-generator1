@@ -1,39 +1,49 @@
 :root {
-    --bg-main: #050505;
-    --card-bg: rgba(255, 255, 255, 0.03);
     --glass: rgba(255, 255, 255, 0.05);
-    --accent: #00ffcc; /* Vurgu rengi: Neon yeşili veya tercihine göre */
+    --accent: #e0e0e0;
 }
 
-body { background: var(--bg-main); color: #fff; font-family: 'Inter', sans-serif; }
-
-/* Modern Navbar */
-.navbar { 
-    backdrop-filter: blur(10px); 
-    background: rgba(0,0,0,0.8);
-    position: sticky; top: 0; 
-    padding: 20px 10%; 
-    display: flex; justify-content: space-between;
+body {
+    background: #050505;
+    color: #ffffff;
+    font-family: 'Inter', system-ui, sans-serif;
+    margin: 0;
 }
 
-/* Şık Grid Tasarımı */
-.tattoo-grid { 
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
-    gap: 40px; padding: 10%; 
+/* Modern Header */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 10%;
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
-.tattoo-card { 
-    background: var(--card-bg); 
-    padding: 20px; 
-    border-radius: 20px; 
-    transition: 0.4s; border: 1px solid rgba(255,255,255,0.1);
+/* Tasarım Vitrini (Grid) */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 40px;
+    padding: 60px 10%;
 }
 
-.tattoo-card:hover { 
-    transform: translateY(-15px); 
-    border-color: var(--accent); 
-    box-shadow: 0 10px 30px rgba(0,255,204,0.1); 
+.card {
+    background: var(--glass);
+    padding: 20px;
+    border-radius: 24px;
+    border: 1px solid rgba(255,255,255,0.08);
+    transition: 0.5s ease;
 }
 
-img { width: 100%; height: auto; border-radius: 12px; }
+.card:hover {
+    transform: translateY(-10px);
+    background: rgba(255,255,255,0.08);
+}
+
+.card img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 16px;
+    margin-bottom: 15px;
+}
