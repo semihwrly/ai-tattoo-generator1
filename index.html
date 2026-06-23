@@ -1,42 +1,15 @@
 <!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InkMarket | Keşfet</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
+<html>
+<head><link rel="stylesheet" href="style.css"></head>
 <body>
-
     <nav class="navbar">
-        <div class="logo"><a href="index.html">INKMARKET</a></div>
+        <div class="logo">MARKAM</div>
         <div class="nav-links">
-            <a href="index.html" class="active">Keşfet</a>
-            <a href="artist.html">Sanatçılar</a>
+            <a href="index.html">Tasarımlar</a>
+            <a href="profil.html">Hakkımda</a>
         </div>
     </nav>
-
-    <header style="padding: 60px 5%; text-align: center; border-bottom: 1px solid var(--border-color);">
-        <h1 style="font-size: 2.3rem; margin-bottom: 12px; font-weight: 800; letter-spacing: -0.5px;">Benzersiz Dövme Şablonları</h1>
-        <p style="color: var(--text-muted); max-width: 550px; margin: 0 auto;">
-            Profesyonel sanatçılar tarafından üretilen dijital flaş dövme tasarımlarını keşfedin ve mülkiyetini satın alın.
-        </p>
-    </header>
-
-    <div class="filter-container" style="padding: 30px 5% 10px 5%; display: flex; gap: 12px; overflow-x: auto;">
-        <span class="filter-btn active" data-category="all" style="border: 1px solid var(--text-main); padding: 6px 16px; font-size: 0.85rem; cursor: pointer;">Hepsi</span>
-        <span class="filter-btn" data-category="minimalist" style="border: 1px solid var(--border-color); color: var(--text-muted); padding: 6px 16px; font-size: 0.85rem; cursor: pointer;">Minimalist</span>
-        <span class="filter-btn" data-category="geometrik" style="border: 1px solid var(--border-color); color: var(--text-muted); padding: 6px 16px; font-size: 0.85rem; cursor: pointer;">Geometrik</span>
-        <span class="filter-btn" data-category="cyberpunk" style="border: 1px solid var(--border-color); color: var(--text-muted); padding: 6px 16px; font-size: 0.85rem; cursor: pointer;">Cyberpunk</span>
-    </div>
-
     <main class="tattoo-grid" id="tattoo-gallery"></main>
-
-    <footer>
-        <p>&copy; 2026 InkMarket. Tüm Hakları Saklıdır.</p>
-    </footer>
-
     <script src="script.js"></script>
 </body>
 </html>
