@@ -17,7 +17,7 @@ const tattoos = [
         artist: "@SeninKullanıcıAdın",
         price: 75,
         category: "geometrik",
-        image: "resim_linkin_2.png"
+        image: "images2.png"
     },   
    {
         id: 1,
