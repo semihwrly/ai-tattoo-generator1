@@ -3,7 +3,23 @@
    Tüm dövme tasarımlarını tek bir merkezde tutuyoruz.
    ========================================== */
 const tattoos = [
+ {
+        id: 5, // ID'yi her zaman bir arttır
+        title: "Kendi Tasarımının Adı",
+        artist: "@SeninKullanıcıAdın",
+        price: 50,
+        category: "minimalist", // minimalist, geometrik veya cyberpunk
+        image: "resim_linkin_buraya.png" // İnternetten bir link veya proje klasöründeki resmin yolu
+    },
     {
+        id: 6,
+        title: "İkinci Tasarımın",
+        artist: "@SeninKullanıcıAdın",
+        price: 75,
+        category: "geometrik",
+        image: "resim_linkin_2.png"
+    },   
+   {
         id: 1,
         title: "Minimalist Dalga Formu",
         artist: "@SeraTatt",
