@@ -1,22 +1,39 @@
 :root {
-    --bg-main: #0a0a0a;
-    --bg-card: #141414;
-    --border-color: #262626;
-    --text-main: #ffffff;
-    --text-muted: #8a8a8a;
+    --bg-main: #050505;
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --glass: rgba(255, 255, 255, 0.05);
+    --accent: #00ffcc; /* Vurgu rengi: Neon yeşili veya tercihine göre */
 }
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { background-color: var(--bg-main); color: var(--text-main); font-family: sans-serif; line-height: 1.6; }
-a { color: inherit; text-decoration: none; }
 
-.navbar { display: flex; justify-content: space-between; padding: 20px 5%; border-bottom: 1px solid var(--border-color); }
-.logo { font-weight: 800; letter-spacing: 2px; }
-.nav-links a { margin-left: 20px; color: var(--text-muted); }
+body { background: var(--bg-main); color: #fff; font-family: 'Inter', sans-serif; }
 
-.tattoo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; padding: 40px 5%; }
-.tattoo-card { background-color: var(--bg-card); border: 1px solid var(--border-color); border-radius: 4px; display: block; }
-.tattoo-image-wrapper { background: #fff; height: 300px; display: flex; align-items: center; justify-content: center; }
-.tattoo-image-wrapper img { max-width: 90%; max-height: 90%; object-fit: contain; }
-.tattoo-info { padding: 15px; }
+/* Modern Navbar */
+.navbar { 
+    backdrop-filter: blur(10px); 
+    background: rgba(0,0,0,0.8);
+    position: sticky; top: 0; 
+    padding: 20px 10%; 
+    display: flex; justify-content: space-between;
+}
 
-.btn-primary { background: #fff; color: #000; padding: 10px 20px; border: none; cursor: pointer; font-weight: 600; }
+/* Şık Grid Tasarımı */
+.tattoo-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+    gap: 40px; padding: 10%; 
+}
+
+.tattoo-card { 
+    background: var(--card-bg); 
+    padding: 20px; 
+    border-radius: 20px; 
+    transition: 0.4s; border: 1px solid rgba(255,255,255,0.1);
+}
+
+.tattoo-card:hover { 
+    transform: translateY(-15px); 
+    border-color: var(--accent); 
+    box-shadow: 0 10px 30px rgba(0,255,204,0.1); 
+}
+
+img { width: 100%; height: auto; border-radius: 12px; }
