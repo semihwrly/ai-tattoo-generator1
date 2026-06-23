@@ -1,24 +1,33 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
+    <meta charset="UTF-8">
+    <title>Dövme Sanatçısı Portfolyosu</title>
     <link rel="stylesheet" href="style.css">
-    <title>Portfolio | Dövme Tasarım Sanatçısı</title>
 </head>
 <body>
-    <nav>
-        <div style="font-size: 1.5rem; font-weight: 800;">SANATÇI ADI</div>
-        <div>
-            <a href="index.html" style="margin-right: 20px;">VİTRİN</a>
-            <a href="profil.html">HAKKIMDA</a>
-        </div>
-    </nav>
-
-    <header style="padding: 100px 10% 50px;">
-        <h1 style="font-size: 4rem; line-height: 1;">Minimalist &<br>Kalici Eserler.</h1>
+    <header>
+        <h1>[Sanatçı Adı]</h1>
+        <nav>
+            <a href="#galeri">Çalışmalarım</a>
+            <a href="#hakkimda">Hakkımda</a>
+        </nav>
     </header>
 
-    <main class="gallery" id="gallery-container"></main>
+    <main>
+        <section id="galeri">
+            <h2>Çalışmalarım</h2>
+            <div class="grid">
+                <div class="kart">Tasarım 1</div>
+                <div class="kart">Tasarım 2</div>
+                <div class="kart">Tasarım 3</div>
+            </div>
+        </section>
 
-    <script src="script.js"></script>
+        <section id="hakkimda">
+            <h2>Profilim</h2>
+            <p>Buraya sanat anlayışını ve deneyimini anlatan bir yazı ekleyebilirsin.</p>
+        </section>
+    </main>
 </body>
 </html>
