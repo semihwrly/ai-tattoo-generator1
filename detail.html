@@ -1,50 +1,11 @@
 <!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InkMarket | Tasarım Detayı</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
+<html>
+<head><link rel="stylesheet" href="style.css"></head>
 <body>
-
-    <nav class="navbar">
-        <div class="logo"><a href="index.html">INKMARKET</a></div>
-        <div class="nav-links">
-            <a href="index.html">Keşfet</a>
-            <a href="artist.html">Sanatçılar</a>
-        </div>
-    </nav>
-
-    <main class="detail-container">
-        
-        <div style="background-color: #ffffff; padding: 40px; border-radius: 4px; display: flex; justify-content: center; align-items: center; min-height: 400px; border: 1px solid var(--border-color);">
-            <img id="detail-image" src="" alt="Tasarım Önizleme" style="max-width: 100%; height: auto; object-fit: contain;">
-        </div>
-
-        <div style="display: flex; flex-direction: column; justify-content: center;">
-            <span id="detail-category" style="color: var(--text-muted); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">-</span>
-            <h1 id="detail-title" style="font-size: 2rem; font-weight: 800; margin-bottom: 10px;">Yükleniyor...</h1>
-            
-            <p id="detail-price" style="font-size: 1.5rem; font-weight: 600; margin-bottom: 25px; color: var(--text-main);">$0</p>
-            
-            <div style="border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 20px 0; margin-bottom: 25px; font-size: 0.9rem; color: var(--text-muted);">
-                <p style="margin-bottom: 8px;"><strong style="color: var(--text-main);">Sanatçı:</strong> <span id="detail-artist">-</span></p>
-                <p style="margin-bottom: 8px;"><strong style="color: var(--text-main);">Dosya Formatı:</strong> Yüksek Çözünürlüklü PNG & SVG (Stencil Hazır)</p>
-                <p><strong style="color: var(--text-main);">Lisans:</strong> Tek seferlik dövme basım hakkı dahildir.</p>
-            </div>
-
-            <button class="btn-primary" onclick="alert('Ödeme sistemine yönlendiriliyorsunuz...')">Tasarımı Satın Al (Dijital İndirme)</button>
-            <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 10px;">Satın alım sonrası indirme linki e-posta adresinize gönderilir.</p>
-        </div>
-
+    <nav class="navbar"><div class="logo"><a href="index.html">MARKAM</a></div></nav>
+    <main style="padding: 50px; text-align: center;">
+        <h1 id="title">Yükleniyor...</h1>
+        <button class="btn-primary" onclick="alert('İletişime geçildi!')">Satın Al</button>
     </main>
-
-    <footer>
-        <p>&copy; 2026 InkMarket. Tüm Hakları Saklıdır.</p>
-    </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
