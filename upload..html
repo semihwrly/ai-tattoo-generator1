@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Tasarım Yükle | InkMarket</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><a href="index.html">INKMARKET</a></div>
+    </nav>
+
+    <main style="padding: 50px 20%; max-width: 600px; margin: 0 auto;">
+        <h2 style="margin-bottom: 20px;">Yeni Tasarım Yükle</h2>
+        <form id="upload-form" style="display: flex; flex-direction: column; gap: 15px;">
+            <input type="text" id="title" placeholder="Tasarım Adı" required style="padding: 10px; background: #141414; border: 1px solid var(--border-color); color: white;">
+            <input type="number" id="price" placeholder="Fiyat ($)" required style="padding: 10px; background: #141414; border: 1px solid var(--border-color); color: white;">
+            <input type="text" id="category" placeholder="Kategori (minimalist/geometrik)" required style="padding: 10px; background: #141414; border: 1px solid var(--border-color); color: white;">
+            <input type="text" id="image-url" placeholder="Görsel URL'si" required style="padding: 10px; background: #141414; border: 1px solid var(--border-color); color: white;">
+            
+            <button type="submit" class="btn-primary">Tasarımı Yayınla</button>
+        </form>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        // Form gönderildiğinde veriyi al ve tattoos dizisine ekle
+        document.getElementById('upload-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const newTattoo = {
+                id: tattoos.length + 1,
+                title: document.getElementById('title').value,
+                artist: "@YeniSanatçı",
+                price: parseFloat(document.getElementById('price').value),
+                category: document.getElementById('category').value,
+                image: document.getElementById('image-url').value
+            };
+            tattoos.push(newTattoo);
+            alert("Tasarım başarıyla eklendi! (Sayfa yenilendiğinde veriler sıfırlanacaktır)");
+            window.location.href = "index.html";
+        });
+    </script>
+</body>
+</html>
