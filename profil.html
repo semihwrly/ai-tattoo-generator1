@@ -3,63 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InkMarket | Sanatçı Profili</title>
+    <title>Hakkımda | Dövme Tasarımcım</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <nav class="navbar">
-        <div class="logo"><a href="index.html">INKMARKET</a></div>
+        <div class="logo"><a href="index.html">Semih</a></div>
         <div class="nav-links">
-            <a href="index.html">Keşfet</a>
-            <a href="artist.html" class="active">Sanatçılar</a>
+            <a href="index.html">Tasarımlar</a>
+            <a href="profil.html" class="active">Hakkımda</a>
         </div>
     </nav>
 
-    <section class="artist-header">
-        <img class="artist-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200" alt="Sanatçı Profil">
-        <div>
-            <h1 style="font-size: 1.8rem; font-weight: 800; margin-bottom: 5px;">Sera Tattooer</h1>
-            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 10px;">@SeraTatt &bull; İstanbul</p>
-            <p style="max-width: 500px; font-size: 0.9rem; color: #b3b3b3;">
-                İnce çizgi (fine-line) ve minimalist geometrik tasarımlar üzerine yoğunlaşmış dijital dövme illüstratörü.
-            </p>
+    <section class="artist-header" style="flex-direction: column; text-align: center; padding: 80px 5%;">
+        <img class="artist-avatar" src="https://via.placeholder.com/150" alt="Profil Fotoğrafım" style="width: 150px; height: 150px; margin-bottom: 20px;">
+        
+        <h1 style="font-size: 2.5rem; margin-bottom: 15px;">Merhaba, Ben [İsmin]</h1>
+        <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 30px;">
+            Dövme tasarımına olan tutkumu, dijital sanatla birleştirerek kalıcı eserlere dönüştürüyorum. Minimalist, line-art ve geometrik tarzda kişiye özel tasarımlar yapıyorum.
+        </p>
+
+        <a href="mailto:epostan@example.com" class="btn-primary">İş Birliği İçin Yaz</a>
+    </section>
+
+    <section style="padding: 40px 5%; border-top: 1px solid var(--border-color); text-align: center;">
+        <h3 style="margin-bottom: 20px;">Beni Takip Edin</h3>
+        <div style="display: flex; gap: 20px; justify-content: center; color: var(--text-muted);">
+            <a href="https://instagram.com/kullaniciadin" target="_blank">Instagram</a>
+            <a href="https://behance.net/kullaniciadin" target="_blank">Behance</a>
         </div>
     </section>
 
-    <h2 style="padding: 40px 5% 0 5%; font-size: 1.2rem; font-weight: 800;">Sanatçının Tasarımları</h2>
-
-    <main class="tattoo-grid">
-        <a href="detail.html" class="tattoo-card">
-            <div class="tattoo-image-wrapper">
-                <img src="https://images.unsplash.com/photo-1560942485-b2a11cc13456?q=80&w=400" alt="Tasarım">
-            </div>
-            <div class="tattoo-info">
-                <h3 class="tattoo-title">Minimalist Dalga Formu</h3>
-                <div class="tattoo-meta">
-                    <span>@SeraTatt</span>
-                    <span style="color: var(--text-main); font-weight: 600;">$45</span>
-                </div>
-            </div>
-        </a>
-
-        <a href="detail.html" class="tattoo-card">
-            <div class="tattoo-image-wrapper">
-                <img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?q=80&w=400" alt="Tasarım">
-            </div>
-            <div class="tattoo-info">
-                <h3 class="tattoo-title">Linear Botanik Yaprak</h3>
-                <div class="tattoo-meta">
-                    <span>@SeraTatt</span>
-                    <span style="color: var(--text-main); font-weight: 600;">$35</span>
-                </div>
-            </div>
-        </a>
-    </main>
-
     <footer>
-        <p>&copy; 2026 InkMarket. Tüm Hakları Saklıdır.</p>
+        <p>&copy; 2026 [İsmin]. Tüm Hakları Saklıdır.</p>
     </footer>
 
 </body>
