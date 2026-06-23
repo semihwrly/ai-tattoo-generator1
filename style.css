@@ -27,3 +27,25 @@ header {
 }
 
 h2 { color: #ffffff; }
+/* Header içindeki linkleri düzenlemek için */
+header nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+}
+
+/* Profil butonu özel tasarımı */
+.profil-buton {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 1px solid #555;
+    transition: 0.3s;
+}
+
+.profil-buton:hover {
+    background-color: #555;
+}
