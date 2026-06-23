@@ -6,10 +6,10 @@ const tattoos = [
  {
         id: 5, // ID'yi her zaman bir arttır
         title: "Kendi Tasarımının Adı",
-        artist: "@SeninKullanıcıAdın",
+        artist: "@Semihwrly",
         price: 50,
-        category: "minimalist", // minimalist, geometrik veya cyberpunk
-        image: "resim_linkin_buraya.png" // İnternetten bir link veya proje klasöründeki resmin yolu
+        category: "çizgisel", // minimalist, geometrik veya cyberpunk
+        image: "images1.png" // İnternetten bir link veya proje klasöründeki resmin yolu
     },
     {
         id: 6,
