@@ -7,9 +7,9 @@ body {
     background-repeat: no-repeat;
     
     /* --- ÖNEMLİ: Öğeleri Öne Çıkaran Scrim (Kaplama) Efekti --- */
-    /* Bu kod, arka planın üzerine %85 opaklığında siyah bir filtre uygular. 
+    /* Bu kod, arka planın üzerine %70 opaklığında siyah bir filtre uygular. 
        Böylece arka plan kararır ve üzerindeki beyaz yazılar/kartlar patlar. */
-    background-color: rgba(0, 0, 0, 0.85); 
+    background-color: rgba(0, 0, 0, 0.7); 
     
     /* Görsel ve kaplamayı karıştırır */
     background-blend-mode: multiply; 
