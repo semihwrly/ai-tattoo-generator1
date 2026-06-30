@@ -1,10 +1,35 @@
 <!DOCTYPE html>
-<html>
-<head><link rel="stylesheet" href="style.css"></head>
-<body style="text-align:center; padding-top: 50px;">
-    <h1>Profilim</h1>
-    <p>Merhaba, ben [İsmin]. Dövme tasarımları yapıyorum.</p>
-    <p>İletişim: email@adresin.com</p>
-    <a href="index.html" class="profile-link">Ana Sayfaya Dön</a>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>İletişim & Profil</title>
+</head>
+<body class="contact-page">
+
+    <div class="contact-container">
+        <h1>Bana Ulaşın</h1>
+        <p>Kişiye özel tasarım talepleriniz için lütfen aşağıdaki formu doldurun.</p>
+        
+        <form action="https://formspree.io/f/senin-id-numaran" method="POST">
+            <input type="text" name="name" placeholder="Adınız Soyadınız" required>
+            
+            <select name="body-part">
+                <option value="" disabled selected>Dövme Yapılacak Bölgeyi Seçin</option>
+                <option value="kol">Kol</option>
+                <option value="bacak">Bacak</option>
+                <option value="sirt">Sırt</option>
+                <option value="diger">Diğer</option>
+            </select>
+
+            <textarea name="message" placeholder="Tasarım fikrinizi detaylıca anlatın..." required></textarea>
+            
+            <button type="submit" class="submit-btn">Talebi Gönder</button>
+        </form>
+        
+        <br>
+        <a href="index.html" class="back-link">← Ana Sayfaya Dön</a>
+    </div>
+
 </body>
 </html>
