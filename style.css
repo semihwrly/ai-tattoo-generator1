@@ -88,3 +88,35 @@ header {
         font-size: 12px;
     }
 }
+.contact-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #1e1e1e;
+    border: 1px solid #333;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    background: #121212;
+    border: 1px solid #444;
+    color: white;
+    box-sizing: border-box; /* Kutuların taşmasını engeller */
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background: #d4af37;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    color: #121212;
+}
+
+.back-link {
+    color: #888;
+    text-decoration: none;
+}
