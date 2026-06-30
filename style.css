@@ -1,14 +1,24 @@
 body {
-    /* Tırnak işaretleri doğru mu? */
+    /* --- Arka Plan Görseli (Sabit Kalır) --- */
     background-image: url('imagesbck.png');
-    
-    /* Diğer özellikler */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-color: #000000; /* Görsel yüklenmezse en azından siyah görünsün */
-    /* ... */
+    
+    /* --- ÖNEMLİ: Öğeleri Öne Çıkaran Scrim (Kaplama) Efekti --- */
+    /* Bu kod, arka planın üzerine %85 opaklığında siyah bir filtre uygular. 
+       Böylece arka plan kararır ve üzerindeki beyaz yazılar/kartlar patlar. */
+    background-color: rgba(0, 0, 0, 0.85); 
+    
+    /* Görsel ve kaplamayı karıştırır */
+    background-blend-mode: multiply; 
+
+    color: #e0e0e0;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
 }
 
 header {
