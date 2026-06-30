@@ -72,3 +72,19 @@ header {
     border-color: #d4af37; /* Kenarlık rengi altın olur */
     box-shadow: 0 10px 20px rgba(0,0,0,0.5); /* Derinlik efekti */
 }
+/* Mobil cihazlar için (Ekran genişliği 768px'den küçükse) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Başlık ve profil linkini alt alta getir */
+        gap: 15px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr; /* Galeriyi tek sütun yap */
+    }
+
+    .filters button {
+        padding: 5px 10px; /* Butonları biraz küçült ki ekrana sığsın */
+        font-size: 12px;
+    }
+}
