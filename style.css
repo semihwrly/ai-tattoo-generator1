@@ -1,12 +1,12 @@
 body {
-    /* İki farklı koyu ton arasında yumuşak bir geçiş */
-    background: radial-gradient(circle at center, #1e1e1e 0%, #121212 100%);
-    background-attachment: fixed; /* Sayfa kaydırıldığında arka plan sabit kalsın */
+    /* Çok koyu bir füme üzerinden, merkeze doğru açılan hafif lüks bir derinlik */
+    background: radial-gradient(circle at 50% 0%, #2a2a2a 0%, #121212 70%);
+    background-attachment: fixed;
     color: #e0e0e0;
     font-family: 'Segoe UI', sans-serif;
     margin: 0;
     padding: 20px;
-    min-height: 100vh; /* Sayfa içeriği az olsa bile ekranı tam kaplar */
+    min-height: 100vh;
 }
 
 header {
