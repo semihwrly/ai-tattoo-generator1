@@ -1,23 +1,15 @@
 body {
-    /* Yeni, tamamen siyah-beyaz olan görseli kullanıyoruz */
+    /* Tırnak işaretleri doğru mu? */
     background-image: url('bg-tribal-bw.jpg');
+    
+    /* Diğer özellikler */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    
-    /* Kaplama modunu koruyoruz, ancak görsel zaten siyah beyaz olduğu için 
-       artık daha keskin ve net bir kontrast elde edeceğiz. */
-    background-blend-mode: overlay; 
-    background-color: #000000; /* Arka planı tam siyah yapıyoruz */
-
-    color: #e0e0e0;
-    font-family: 'Segoe UI', sans-serif;
-    margin: 0;
-    padding: 20px;
-    min-height: 100vh;
+    background-color: #000000; /* Görsel yüklenmezse en azından siyah görünsün */
+    /* ... */
 }
-
 
 header {
     display: flex;
