@@ -23,5 +23,23 @@
         <div class="design-card">Tasarım 2</div>
         <div class="design-card">Tasarım 3</div>
     </main>
+    <script>
+    const buttons = document.querySelectorAll('.filters button');
+    const cards = document.querySelectorAll('.design-card');
+
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            const category = button.textContent.toLowerCase();
+            
+            cards.forEach(card => {
+                if (category === 'tümü' || card.dataset.category === category) {
+                    card.style.display = 'flex'; // Görünür yap
+                } else {
+                    card.style.display = 'none'; // Gizle
+                }
+            });
+        });
+    });
+    </script>
 </body>
 </html>
